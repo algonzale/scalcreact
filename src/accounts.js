@@ -1,5 +1,0 @@
-[
- "Emergency",
-  "Car",
-  "School",
-]

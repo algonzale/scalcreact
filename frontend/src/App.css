@@ -1,0 +1,77 @@
+body {
+  background: #fcfcfc;
+  height: 100%;
+  margin: 0;
+}
+.header {
+  background-color: #ffffff;
+  margin: 0;
+  border: solid #f2f2f2;
+  border-width: thin;
+  text-align: center;
+}
+.header_title {
+  margin: 10px 0px;
+}
+.header_input {
+  color: black;
+  background-color: transparent;
+  border: solid orange;
+  border-width: thin;
+  padding: 5px;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+.body_cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  background-image: linear-gradient(45deg, rgb(228, 166, 43), rgba(203, 40, 139));
+  background: -webkit-gradient(linear, left top, right top, from(#e4a62b), to(#cb288b));
+  border-radius: 10px;
+  padding: 7px;
+  margin: 5px;
+  text-align: center;
+  color: #ffffff;
+}
+.Card_input {
+	background-color: transparent;
+  padding: 2px;
+  width: 30%;
+	border: solid orange;
+	border-width: thin;
+	border-radius: 8px;
+  text-align: center;
+	color: white;
+}
+.Card_input::placeholder {
+	margin-top: 0;
+	color: #ffffff;
+	padding: 0px;
+	opacity: .5;
+}
+.navigation {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  justify-content: center;
+  padding: 5px;
+}
+.navigation_button {
+  background-color: #00cbff;
+  font-weight: 800;
+  color: white;
+  border-radius: 15px;
+  border: none;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+}
