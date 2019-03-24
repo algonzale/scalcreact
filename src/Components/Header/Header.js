@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 
-const Header =({ onTotalChange, totalPercentage })=> {
+const Header =({ onTotalChange, sumOfPer})=> {
+	
 	return (
 		<div className="header">
 			<h1 className="header_title">Savings Calculator</h1>
 			<HeaderInput className="header_input" onTotalChange={onTotalChange}/>
+			<div>
+				<p>{`Current Percentage: ${sumOfPer}%`}</p>
+			</div>	
 		</div>
 	);
 }

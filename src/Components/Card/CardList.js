@@ -1,20 +1,18 @@
 import React, { Component } from "react";
-import database from '../../App.js';
 
-const CardList =({accounts, total})=> {
-	let currentPercentage  ;
+const CardList =({accounts, total, database, updatePerc})=> {
 	return (
 		<div className="cardlist">
-		<div className="currentPercentageDiv">
-			<p className="currentPercentage">{`Current Percentage: ${100}%`}</p>
-		</div>
 			{
 				accounts.map((account, i)=> {
 					return(
 						<Card key={i}
+						id={accounts[i].id}
 						name={accounts[i].name}
 						percentage={accounts[i].percentage}
 						total={total}
+						database = {database}
+						updatePerc={updatePerc}
 						/> 
 					);
 				})
@@ -37,20 +35,21 @@ class Card extends Component {
 
 	onPercentageChange =(event)=> {
 		this.setState({ percentage: event.target.value / 100 });
-
+		this.props.database[this.props.id].percentage = Number(event.target.value);
+		this.props.updatePerc(this.props.database);
  }
 
 	render() {
 		return(
 			<div className="card">
-				<p>{this.props.name}</p>
+				<p className="cardName">{this.props.name}</p>
 				<input 
 					className="Card_input" 
 					type="number" 
 					placeholder= {((this.props.percentage >= 0) ? this.props.percentage : '...') + "%"}
 					onChange={this.onPercentageChange} 
 				/>	
-				<p className="cardTotal">{"$"+this.props.total * this.state.percentage}</p>
+				<p className="cardTotal">{"$"+(this.props.total * this.state.percentage).toFixed(2)}</p>
 			  </div>
 		)
 	}

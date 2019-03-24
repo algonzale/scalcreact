@@ -49,21 +49,27 @@ class App extends Component {
     super();
     this.state = {
       totalMoney: 0,
+      sumOfPer: 100,
     }
   } 
 
+  updatePerc =(nwDatabase)=> {
+    let sumOfPer = nwDatabase.map(account => account.percentage).reduce((total, percentage) => total + percentage);
+    this.setState({ sumOfPer: sumOfPer })
+  }
+  
   onTotalChange =(inpuTotal)=> {
     this.setState({ totalMoney: inpuTotal });
   }
   
   render() {
     return (
-      <div className="App gridCont">
-        <Header onTotalChange={this.onTotalChange}/>
-        <div className="body_cardContainer">
+      <div className="App">
+        <Header onTotalChange={this.onTotalChange} sumOfPer={this.state.sumOfPer}/>
+        <div className="body_cardContainer gridCont">
+          <CardList accounts={database} total = {this.state.totalMoney} database={database} updatePerc={this.updatePerc}/>
+          <NavigationBar createCard={this.createCard}/>
         </div>
-        <CardList accounts={database} total = {this.state.totalMoney} />
-        <NavigationBar createCard={this.createCard}/>
       </div>
     );
   }
