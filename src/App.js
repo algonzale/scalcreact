@@ -9,37 +9,32 @@ const database = [
   {
     id: 0,
     name: 'Emergency',
-    percentage: 11,
+    percentage: 15,
   }, 
   {
     id: 1,
     name: 'Investing',
-    percentage: 30,
+    percentage: 20,
   },
   {
     id: 2,
     name: 'School',
-    percentage: 26,
+    percentage: 30,
   },
   {
     id: 3,
     name: 'Car',
-    percentage: 11,
-  }, 
-  {
-    id: 4,
-    name: 'Computer',
     percentage: 10,
   }, 
   {
     id: 5,
-    name: 'Dating',
-    percentage: 6,
+    name: 'Travel',
+    percentage: 10,
   },  
   {
     id: 6,
     name: 'Personal Expenses',
-    percentage: 6,
+    percentage: 15,
   }, 
 ]
 
